@@ -1,0 +1,33 @@
+.footer {
+  background: #111;
+  padding: 20px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.arc,
+.izo {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  color: var(--beige);
+}
+
+.divider {
+  width: 1.5px;
+  height: 18px;
+  background: var(--beige);
+  margin: 0 2px;
+}
+
+.copy {
+  font-size: 8px;
+  color: #444;
+  letter-spacing: 1px;
+}

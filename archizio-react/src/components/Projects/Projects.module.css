@@ -1,0 +1,142 @@
+.projects {
+  padding: 64px 48px;
+  background: var(--beige);
+}
+
+.tag {
+  font-size: 8px;
+  letter-spacing: 3px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--serif);
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.line {
+  width: 100px;
+  height: 1px;
+  background: var(--ink);
+  margin-bottom: 40px;
+}
+
+/* Asimetrik grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 12px;
+}
+
+/* Kart */
+.card {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.card.big {
+  grid-row: span 2;
+  height: 380px;
+}
+
+.card.small {
+  height: 182px;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(26, 26, 26, 0.75);
+  padding: 16px 20px;
+}
+
+.cat {
+  font-size: 7px;
+  letter-spacing: 2px;
+  color: #aaa;
+  margin-bottom: 4px;
+}
+
+.name {
+  font-family: var(--serif);
+  font-size: 17px;
+  color: var(--cream);
+}
+
+.plus {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  background: rgba(245, 240, 232, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--ink);
+}
+
+/* Modal */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 26, 26, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal {
+  background: var(--cream);
+  width: 480px;
+  max-width: 90vw;
+  padding: 48px;
+  position: relative;
+}
+
+.modalCat {
+  font-size: 8px;
+  letter-spacing: 3px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.modalName {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.modalLine {
+  width: 60px;
+  height: 1px;
+  background: var(--ink);
+  margin-bottom: 20px;
+}
+
+.modalDetail {
+  font-size: 11px;
+  color: #666;
+  line-height: 1.8;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 20px;
+  color: var(--muted);
+  cursor: pointer;
+  background: none;
+  border: none;
+  line-height: 1;
+}

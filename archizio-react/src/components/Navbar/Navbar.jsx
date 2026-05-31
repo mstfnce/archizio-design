@@ -1,6 +1,6 @@
 import s from './Navbar.module.css'
 
-function Navbar({ lang = 'tr', setLang }) {
+function Navbar({ lang = 'tr', setLang, t }) {
   return (
     <nav className={s.nav}>
       <a href="#top" className={s.logo}>
@@ -11,26 +11,16 @@ function Navbar({ lang = 'tr', setLang }) {
       </a>
 
       <div className={s.links}>
-        <a href="#hero">HAKKIMIZDA</a>
-        <a href="#services">HİZMETLER</a>
-        <a href="#projects">PROJELER</a>
-        <a href="#contact">İLETİŞİM</a>
+        <a href="#hero">{t.about}</a>
+        <a href="#services">{t.services}</a>
+        <a href="#projects">{t.projects}</a>
+        <a href="#contact">{t.contact}</a>
       </div>
 
       <div className={s.lang}>
-        <button
-          className={lang === 'tr' ? s.active : ''}
-          onClick={() => setLang?.('tr')}
-        >
-          TR
-        </button>
+        <button className={lang === 'tr' ? s.active : ''} onClick={() => setLang?.('tr')}>TR</button>
         <span className={s.sep}>|</span>
-        <button
-          className={lang === 'en' ? s.active : ''}
-          onClick={() => setLang?.('en')}
-        >
-          EN
-        </button>
+        <button className={lang === 'en' ? s.active : ''} onClick={() => setLang?.('en')}>EN</button>
       </div>
     </nav>
   )

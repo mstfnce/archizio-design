@@ -1,0 +1,60 @@
+.feed {
+  padding: 64px 48px;
+  background: var(--cream);
+}
+
+.tag {
+  font-size: 8px;
+  letter-spacing: 3px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--serif);
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.line {
+  width: 100px;
+  height: 1px;
+  background: var(--ink);
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.post {
+  aspect-ratio: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.inner {
+  width: 100%;
+  height: 100%;
+}
+
+.handle {
+  margin-top: 24px;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.handle a {
+  color: var(--ink);
+  border-bottom: 1px solid var(--sand);
+  padding-bottom: 2px;
+  transition: border-color 0.2s;
+}
+
+.handle a:hover {
+  border-color: var(--ink);
+}
