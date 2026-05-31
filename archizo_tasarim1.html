@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Archizo - Konsept 01</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Jost',sans-serif;background:#F5F0E8;color:#1A1A1A;font-weight:300}
+nav{background:#F5F0E8;padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #E0D8C8;position:sticky;top:0;z-index:10}
+.logo{display:flex;align-items:center;gap:0}
+.logo-arc{font-size:15px;font-weight:600;letter-spacing:5px;color:#1A1A1A}
+.logo-div{width:1.5px;height:22px;background:#1A1A1A;margin:0 2px}
+.logo-izo{font-size:15px;font-weight:600;letter-spacing:5px;color:#1A1A1A}
+.logo-sub{font-size:7px;letter-spacing:3px;color:#999;margin-left:12px;margin-top:1px}
+.nav-links{display:flex;gap:36px}
+.nav-links a{font-size:10px;letter-spacing:2px;color:#555;text-decoration:none}
+.lang{font-size:9px;letter-spacing:1px;border:1px solid #CCC;padding:4px 8px;color:#888}
+
+/* HERO */
+.hero{height:520px;background:#D4C9B5;position:relative;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#C8BFB0 0%,#B8AFA0 50%,#A8A090 100%)}
+.hero-lines{position:absolute;inset:0;opacity:.3}
+.hero-lines::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:repeating-linear-gradient(45deg,transparent,transparent 80px,rgba(255,255,255,.05) 80px,rgba(255,255,255,.05) 81px)}
+.hero-box{position:absolute;left:48px;top:50%;transform:translateY(-50%);background:rgba(245,240,232,.95);padding:40px 48px;width:440px}
+.hero-box h1{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300;line-height:1.25;margin-bottom:16px}
+.hero-box hr{border:none;border-top:1px solid #1A1A1A;width:140px;margin-bottom:16px}
+.hero-kicker{font-size:9px;letter-spacing:3px;color:#999;margin-bottom:24px}
+.hero-btn{background:#1A1A1A;color:#F5F0E8;font-size:9px;letter-spacing:2px;padding:12px 24px;display:inline-block;cursor:pointer}
+
+/* QUOTE */
+.quote{background:#1A1A1A;padding:40px 48px;text-align:center}
+.quote p{font-family:'Cormorant Garamond',serif;font-size:18px;color:#EDE6D6;font-style:italic;margin-bottom:12px}
+.quote span{font-size:8px;letter-spacing:3px;color:#666}
+
+/* HİZMETLER */
+.services{padding:64px 48px;background:#F5F0E8}
+.section-tag{font-size:8px;letter-spacing:3px;color:#999;margin-bottom:12px}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:28px;margin-bottom:8px}
+.section-line{width:100px;height:1px;background:#1A1A1A;margin-bottom:40px}
+.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.card{background:#fff;padding:24px 20px;border:1px solid #E8E0D0;position:relative}
+.card.featured{background:#1A1A1A;color:#EDE6D6;border-color:#1A1A1A}
+.card-num{font-size:8px;letter-spacing:2px;color:#CCC;margin-bottom:20px}
+.card.featured .card-num{color:#444}
+.card-icon{font-size:22px;margin-bottom:16px;color:#D4C9B5}
+.card.featured .card-icon{color:#555}
+.card-title{font-size:11px;letter-spacing:2px;font-weight:400;margin-bottom:4px}
+.card-sub{font-size:8px;color:#999;margin-bottom:16px}
+.card.featured .card-sub{color:#666}
+.card hr{border:none;border-top:1px solid #E8E0D0;margin-bottom:12px}
+.card.featured hr{border-top-color:#2A2A2A}
+.card-desc{font-size:9px;color:#888;line-height:1.6}
+.card.featured .card-desc{color:#888}
+
+/* PROJELER */
+.projects{padding:64px 48px;background:#EDE6D6}
+.proj-grid{display:grid;grid-template-columns:1.6fr 1fr;grid-template-rows:auto auto;gap:12px;margin-top:40px}
+.proj-big{grid-row:span 2;background:#C0B5A4;height:380px;position:relative}
+.proj-sm{background:#B0A898;height:182px;position:relative}
+.proj-overlay{position:absolute;bottom:0;left:0;right:0;background:rgba(26,26,26,.75);padding:16px 20px}
+.proj-cat{font-size:7px;letter-spacing:2px;color:#AAA;margin-bottom:4px}
+.proj-name{font-family:'Cormorant Garamond',serif;font-size:17px;color:#F5F0E8}
+.proj-plus{position:absolute;top:16px;right:16px;width:36px;height:36px;background:rgba(245,240,232,.9);display:flex;align-items:center;justify-content:center;font-size:18px;color:#1A1A1A;cursor:pointer}
+
+/* İLETİŞİM */
+.contact{background:#1A1A1A;padding:64px 48px;text-align:center}
+.contact .section-tag{color:#555}
+.contact .section-title{color:#EDE6D6}
+.contact .section-line{background:#444;margin:8px auto 32px}
+.contact-info{color:#888;font-size:11px;line-height:2.2}
+.contact-btn{margin-top:28px;border:1px solid #EDE6D6;color:#EDE6D6;font-size:9px;letter-spacing:2px;padding:12px 32px;display:inline-block;cursor:pointer}
+
+/* FOOTER */
+footer{background:#111;padding:20px 48px;display:flex;justify-content:space-between;align-items:center}
+footer .logo-arc,.footer .logo-izo{color:#EDE6D6}
+.footer-logo{display:flex;align-items:center}
+.footer-logo .logo-arc{font-size:13px;letter-spacing:5px;color:#EDE6D6;font-weight:600}
+.footer-logo .logo-div{background:#EDE6D6}
+.footer-logo .logo-izo{font-size:13px;letter-spacing:5px;color:#EDE6D6;font-weight:600}
+.footer-copy{font-size:8px;color:#444}
+</style>
+</head>
+<body>
+<nav>
+  <div>
+    <div class="logo">
+      <span class="logo-arc">ARC</span>
+      <span class="logo-div"></span>
+      <span class="logo-izo">HIZO</span>
+      <span class="logo-sub">DESIGN STUDIO</span>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#">HAKKIMIZDA</a>
+    <a href="#">HİZMETLER</a>
+    <a href="#">PROJELER</a>
+    <a href="#">İLETİŞİM</a>
+  </div>
+  <div class="lang">TR | EN</div>
+</nav>
+
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-box">
+    <p style="font-size:9px;letter-spacing:3px;color:#999;margin-bottom:14px">ARCHIZO DESIGN STUDIO</p>
+    <h1>Timeless design,<br>refined living.</h1>
+    <hr>
+    <p class="hero-kicker">MİMARİ · İÇ MİMARİ · PEYZAJ</p>
+    <div class="hero-btn">PROJELERİ GÖR →</div>
+  </div>
+</div>
+
+<div class="quote">
+  <p>"Her projede yalnızca bir yapı değil, bir yaşam deneyimi yaratıyoruz."</p>
+  <span>ARCHIZO DESIGN STUDIO</span>
+</div>
+
+<div class="services">
+  <p class="section-tag">HİZMETLERİMİZ</p>
+  <h2 class="section-title">Ne Sunuyoruz?</h2>
+  <div class="section-line"></div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-num">01</div>
+      <div class="card-icon">⌂</div>
+      <div class="card-title">MİMARİ</div>
+      <div class="card-sub">Architecture</div>
+      <hr>
+      <div class="card-desc">Tasarımdan uygulamaya bütüncül mimari çözümler sunuyoruz.</div>
+    </div>
+    <div class="card">
+      <div class="card-num">02</div>
+      <div class="card-icon">◻</div>
+      <div class="card-title">İÇ MİMARİ</div>
+      <div class="card-sub">Interior Design</div>
+      <hr>
+      <div class="card-desc">Mekânlara karakter ve değer katıyoruz.</div>
+    </div>
+    <div class="card featured">
+      <div class="card-num">03</div>
+      <div class="card-icon">✦</div>
+      <div class="card-title">PEYZAJ</div>
+      <div class="card-sub">Landscape Design</div>
+      <hr>
+      <div class="card-desc">Dış mekânları yaşam alanına dönüştürüyoruz.</div>
+    </div>
+    <div class="card">
+      <div class="card-num">04</div>
+      <div class="card-icon">◈</div>
+      <div class="card-title">KONSEPT</div>
+      <div class="card-sub">Concept Design</div>
+      <hr>
+      <div class="card-desc">Vizyonunuzu somutlaştıran konseptler üretiyoruz.</div>
+    </div>
+    <div class="card">
+      <div class="card-num">05</div>
+      <div class="card-icon">⊞</div>
+      <div class="card-title">UYGULAMA</div>
+      <div class="card-sub">Implementation</div>
+      <hr>
+      <div class="card-desc">Tasarımı gerçeğe taşıyoruz.</div>
+    </div>
+  </div>
+</div>
+
+<div class="projects">
+  <p class="section-tag">PROJELERİMİZ</p>
+  <h2 class="section-title">Seçili Çalışmalar</h2>
+  <div class="section-line"></div>
+  <div class="proj-grid">
+    <div class="proj-big" style="background:linear-gradient(160deg,#C8BDA8,#A89E90)">
+      <div class="proj-overlay">
+        <div class="proj-cat">MİMARİ · İSTANBUL · 2024</div>
+        <div class="proj-name">Supplementler.com — Olivium AVM</div>
+      </div>
+      <div class="proj-plus">+</div>
+    </div>
+    <div class="proj-sm" style="background:linear-gradient(160deg,#B8AFA0,#A0978A)">
+      <div class="proj-overlay">
+        <div class="proj-cat">İÇ MİMARİ · 2024</div>
+        <div class="proj-name">Konut Projesi</div>
+      </div>
+      <div class="proj-plus">+</div>
+    </div>
+    <div class="proj-sm" style="background:linear-gradient(160deg,#A8A295,#908A80)">
+      <div class="proj-overlay">
+        <div class="proj-cat">PEYZAJ · 2023</div>
+        <div class="proj-name">Peyzaj Tasarımı</div>
+      </div>
+      <div class="proj-plus">+</div>
+    </div>
+  </div>
+</div>
+
+<div class="contact">
+  <p class="section-tag">İLETİŞİM</p>
+  <h2 class="section-title">Projenizi Konuşalım</h2>
+  <div class="section-line"></div>
+  <div class="contact-info">
+    info@archizodesign.com<br>
+    (0216) 344 58 58<br>
+    www.archizodesign.com
+  </div>
+  <div class="contact-btn">MESAJ GÖNDER →</div>
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <span class="logo-arc" style="font-size:13px;letter-spacing:5px;color:#EDE6D6;font-weight:600">ARC</span>
+    <span style="width:1.5px;height:18px;background:#EDE6D6;margin:0 2px;display:inline-block"></span>
+    <span class="logo-izo" style="font-size:13px;letter-spacing:5px;color:#EDE6D6;font-weight:600">HIZO</span>
+  </div>
+  <div class="footer-copy">© 2025 Archizo Design Studio · Istanbul, Türkiye</div>
+</footer>
+</body>
+</html>

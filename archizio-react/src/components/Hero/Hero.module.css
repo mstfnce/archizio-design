@@ -1,0 +1,81 @@
+.hero {
+  height: 520px;
+  background: var(--sand);
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #c8bfb0 0%, #b8afa0 50%, #a8a090 100%);
+}
+
+.lines {
+  position: absolute;
+  inset: 0;
+  opacity: 0.3;
+}
+
+.lines::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 80px,
+    rgba(255, 255, 255, 0.05) 80px,
+    rgba(255, 255, 255, 0.05) 81px
+  );
+}
+
+.box {
+  position: absolute;
+  left: 48px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(245, 240, 232, 0.95);
+  padding: 40px 48px;
+  width: 440px;
+}
+
+.kickerTop {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.box h1 {
+  font-family: var(--serif);
+  font-size: 34px;
+  font-weight: 300;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.box hr {
+  border: none;
+  border-top: 1px solid var(--ink);
+  width: 140px;
+  margin-bottom: 16px;
+}
+
+.kicker {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.btn {
+  background: var(--ink);
+  color: var(--cream);
+  font-size: 9px;
+  letter-spacing: 2px;
+  padding: 12px 24px;
+  display: inline-block;
+}
